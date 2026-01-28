@@ -5,7 +5,7 @@ import plotly.express as px
 # Configuración Pro
 st.set_page_config(page_title="DOM Vichuquén BI", layout="wide")
 
-# Estilo Vichuquén
+# Diseño institucional
 st.markdown("""
     <style>
     .stApp { background-color: #f8fafc; }
@@ -15,18 +15,17 @@ st.markdown("""
 
 st.markdown('<div class="main-header"><h1>🏛️ DASHBOARD ELITE: Gestión Territorial Vichuquén</h1></div>', unsafe_allow_html=True)
 
-# KPIs según tu reporte Excel
+# KPIs con tus datos exactos (1304 solicitudes totales)
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Gestión Total", "1,304")
-c2.metric("% Digitalización", "46%", help="Meta: 80%")
+c2.metric("% Digitalización", "46%", delta="Meta: 80%")
 c3.metric("Certificados", "857")
 c4.metric("Trámites", "447")
 
 st.divider()
 
-# Gráfico de Ranking TOP 5
+# Ranking TOP 5 (CIP, Número, Edificación, Otros, Recepción)
 st.subheader("🏆 Ranking TOP 5 de Trámites")
-# Datos de tu Excel: CIP(415), Número(316), Edificación(197), Otros(157), Recepción(38)
 df_rank = pd.DataFrame({
     'Trámite': ["CIP", "Número", "Edificación", "Otros", "Recepción"],
     'Total': [415, 316, 197, 157, 38]
